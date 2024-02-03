@@ -26,8 +26,8 @@ class BirthdayForm(forms.ModelForm):
         widgets = {
             'birthday': forms.DateInput(attrs={'type': 'date'})
         } 
-        # Указываем, что надо отобразить все поля.
-        fields = '__all__'
+        # Указываем, что надо отобразить все поля кроме автора.
+        exclude = ('author',)
 
     def clean_first_name(self):
         # Получаем значение имени из словаря очищенных данных.
